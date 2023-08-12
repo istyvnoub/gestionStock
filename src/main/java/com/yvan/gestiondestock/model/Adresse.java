@@ -4,10 +4,7 @@ package com.yvan.gestiondestock.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
@@ -24,12 +21,6 @@ public class Adresse  {
 
   @Column(name="ville")
   private String ville;
-
-  @Column(name="numTel")
-  private String numTel;
-
-  @Column(name ="photo")
-  private String photo;
 
   @Column(name = "pays")
   private String pays;

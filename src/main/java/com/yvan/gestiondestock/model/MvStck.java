@@ -2,11 +2,11 @@ package com.yvan.gestiondestock.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +18,16 @@ public class MvStck extends AbstractEntity{
 
 
 
+  @Column(name = "datemvt")
+  private Instant dateMvt;
 
-  private String nom;
+  @Column(name = "quantite")
+  private BigDecimal quantite;
+
+  @ManyToOne
+  @JoinColumn(name = "idarticle")
+  private Article article;
+
+  @Column(name = "identreprise")
+  private Integer idEntreprise;
 }

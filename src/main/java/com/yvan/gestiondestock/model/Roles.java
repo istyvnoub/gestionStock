@@ -1,10 +1,7 @@
 package com.yvan.gestiondestock.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Data
@@ -16,6 +13,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class Roles extends AbstractEntity {
 
 
+  @Column(name = "rolename")
+  private String roleName;
 
-  private String nom;
+  @ManyToOne
+  @JoinColumn(name = "idutilisateur")
+  private Utilisateur utilisateur;
+
 }
