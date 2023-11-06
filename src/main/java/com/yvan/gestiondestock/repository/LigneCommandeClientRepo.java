@@ -3,5 +3,8 @@ package com.yvan.gestiondestock.repository;
 import com.yvan.gestiondestock.model.LigneCommandeClient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LigneCommandeClientRepo extends JpaRepository<Integer, LigneCommandeClient> {
+import java.util.List;
+
+public interface LigneCommandeClientRepo extends JpaRepository<LigneCommandeClient,Integer> {
+  List<LigneCommandeClient> findAllByCommandeClientId(Integer id);
   }

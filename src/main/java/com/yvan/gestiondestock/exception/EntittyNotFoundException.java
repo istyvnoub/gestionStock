@@ -16,7 +16,7 @@ public class EntittyNotFoundException extends RuntimeException{
     super(message,cause);
   }
 
-  public EntittyNotFoundException (String message,Throwable cause, ErrorCode errorCode){
+  public EntittyNotFoundException (String message, ErrorCode errorCode){
     super(message);
 
     this.errorcode= errorCode;
